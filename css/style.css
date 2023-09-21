@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,800;1,200&display=swap');
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2 {
+  overflow-wrap: break-word;
+}
+
+/** My Styling*/
+body {
+  padding: 2em 1.5em;
+  font-size: 1.25em;
+  background-color: #35BF80;
+  color: #ECF3E4;
+  height: 100%;
+}
+
+.wrapper {
+  font-weight: 800;
+  display: flex;
+  justify-content: space-between;
+}
+
+.div-1, .div-2, .div-3 {
+  /* line-height: 1.5em; */
+  font-size: 1.25rem;
+  min-width: 100px;
+  width: 30%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline-start: 1.5rem;
+
+}
+
+.div-2, .div-3 {
+  border-left: 2px solid #738B5D;
+}

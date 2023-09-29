@@ -13,7 +13,6 @@
 body {
   font-family: 'Source Sans 3', sans-serif;
   line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
 }
 img, picture, video, canvas, svg {
   display: block;
@@ -22,38 +21,246 @@ img, picture, video, canvas, svg {
 input, button, textarea, select {
   font: inherit;
 }
-p, h1, h2 {
+/* p, h1, h2 {
   overflow-wrap: break-word;
-}
+} */
 
 /** My Styling*/
-body {
-  padding: 2em 1.5em;
-  font-size: 1.25em;
+html {
   background-color: #35BF80;
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  padding:  0 2em;
+  font-size: 1.25em;
+
   color: #ECF3E4;
-  height: 100%;
+  height: 100vw;
+}
+
+header {
+  font-size: 2rem;
+}
+
+header,
+footer {
+  background-color: #222;
+  min-height: 80px;
+  width: 100%;
+}
+
+main {
+  background-color: #ccc;
+  min-height: 250px;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+header,
+footer,
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1.5rem;
 }
 
 .wrapper {
   font-weight: 800;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
 }
 
 .div-1, .div-2, .div-3 {
-  /* line-height: 1.5em; */
-  font-size: 1.25rem;
-  min-width: 100px;
+  height: auto;
   width: 30%;
-
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-inline-start: 1.5rem;
+  padding: 1.5rem 2rem;
+  border: 3px solid red;
 
 }
 
+.div-1, .div-2 {
+  /* border-left: 2px solid #738B5D; */
+}
+
 .div-2, .div-3 {
-  border-left: 2px solid #738B5D;
+  /* border-left: 2px solid #738B5D; */
+}
+
+@media (max-width: 768px) {
+  .div-1,
+  .div-2{
+      /* set your flex value to 1 50% */
+      flex: 1 50%;
+  }
+
+  .div-3 {
+    /* set your flex value to 1 100% */
+    flex: 1 100%
+  }
+}
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers:
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+/* If you'd like to try a different layout on Desktop and larger screens: */
+@media (min-width: 1200px) {
+  .div-1,
+  .div-2{
+      /* set your flex value to 1 50% */
+      flex: 1 50%;
+  }
+
+  .div-3 {
+    /* set your flex value to 1 100% */
+    flex: 1 100%
+  }
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
 }
